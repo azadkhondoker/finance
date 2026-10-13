@@ -1,5 +1,6 @@
 function Table(){
     return(
+        
         <div className="main-content-inner" id="main-content">
                 <div className="row">
                     {/* table primary start*/} 

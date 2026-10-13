@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Layout from '../Layout.jsx';
 function CategoryCreate() {
 
   function handleSubmit(e){
@@ -27,8 +28,9 @@ function CategoryCreate() {
 
 
   return (
-    <div className="container">
-      <div className="page-inner">
+    <Layout>
+      <div className="container">
+        <div className="page-inner">
 
         {/* Page Header */}
         <div className="page-header">
@@ -81,6 +83,7 @@ function CategoryCreate() {
 
       </div>
     </div>
+    </Layout>
   );
 }
 

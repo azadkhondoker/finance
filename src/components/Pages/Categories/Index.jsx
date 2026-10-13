@@ -1,37 +1,41 @@
 import React from 'react';
 import { Link } from 'react-router';
+import axios from '../../../Lib/axios.js';
+import Layout from '../Layout.jsx';
 function Categories() {
 
   const [categories, setCategories] = React.useState([]);
 
-  function fetchCategories() {
-    fetch('http://localhost/finance_api/category/index.php')
-      .then(response => response.json())
-      .then(data => setCategories(data.data))
-      .catch(error => console.error('Error fetching categories:', error));
+  async function fetchCategories() {
+    try {
+      const response = await axios.get('category/index.php');
+      const data = await response.data;
+      setCategories(data.data);
+    } catch (error) {
+      console.error('Error fetching categories:', error);
+    }
   }
 
   React.useEffect(() => {
     fetchCategories();
   }
-, [categories]);
+, []);
 
-function handleDelete(id) {
-  if (window.confirm("Are you sure you want to delete this category?")) {
-    fetch(`http://localhost/finance_api/category/delete.php?id=${id}`, {
-      method: 'DELETE'
-    })
-      .then(response => response.json())
-      .then(data => {
-        if (data.status == 'true') {
-          fetchCategories();
-        }
-      })
-      .catch(error => console.error('Error deleting category:', error));
+  async function handleDelete(id) {
+    if (window.confirm("Are you sure you want to delete this category?")) {
+      try {
+        await axios.delete(`category/delete.php?id=${id}`);
+        await fetchCategories();
+      } catch (error) {
+        console.error('Error deleting category:', error);
+      }
+    }
   }
-}
+
+  
 
   return (
+    <Layout>
     <div className="container">
       <div className="page-inner">
 
@@ -107,7 +111,7 @@ function handleDelete(id) {
 
                     <tbody>
 
-                      {categories.map((category, index) => (
+                      {categories && categories.map((category, index) => (
 
                         <tr key={category.id}>
 
@@ -142,6 +146,7 @@ function handleDelete(id) {
         </div>
       </div>
     </div>
+  </Layout>
   );
 }
 
