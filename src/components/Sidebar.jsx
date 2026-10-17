@@ -22,8 +22,8 @@ import { Link, useLocation  } from "react-router";
                             <li className={isActive("/")}>
                                 <Link to="/" aria-expanded="false"><i className="ti-dashboard"></i><span>dashboard</span></Link>
                             </li>
-                            <li >
-                                <Link to="/" aria-expanded="false"><i className="ti-pie-chart"></i><span>Charts</span></Link>
+                            <li className={isActive("/Members")}>
+                                <Link to="/Members" aria-expanded="false"><i className="ti-pie-chart"></i><span>Member</span></Link>
                             </li>
                             <li >
                                 <Link to="#" aria-expanded="false"><i className="ti-palette"></i><span>UI Features</span></Link>
@@ -37,6 +37,15 @@ import { Link, useLocation  } from "react-router";
                             <li className={isActive("/Invoice")}>
                               <Link to="/Invoice"><i className="ti-receipt"></i> <span>Invoice Summary</span></Link>
                             </li>
+                            {/* <li className={isActive("/Saving")} >
+                                <Link to="/Saving" aria-expanded="true"><i className="fa-solid fa-table"></i>
+                                    <span>Saving summary</span></Link>
+                                    <ul className="collapse mm-collapse mm-show">
+                                    <li><Link to="table-basic.html">basic table</Link></li>
+                                    <li><Link to="table-layout.html">table layout</Link></li>
+                                    <li><Link to="datatable.html">datatable</Link></li>
+                                </ul>
+                            </li> */}
                         </ul>
                     </nav>
                 </div>

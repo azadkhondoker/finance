@@ -18,9 +18,13 @@ function Login() {
         password: form.get("password")
       })
       .then((response) => {
-        localStorage.setItem("access_token", response.data.jwt);
-        localStorage.setItem("userdata", response.data.data);
-        window.location.href='./dashboard';
+        if (response.data.status == false) {
+          setMessage("Invalid email or password.");
+        } else {
+          localStorage.setItem("access_token", response.data.jwt);
+          localStorage.setItem("userdata", response.data.data);
+          window.location.href = './dashboard';
+        }
       })
       .catch(() => {
         setMessage("An error occurred while creating your account. Please try again.");

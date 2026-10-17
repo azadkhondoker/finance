@@ -14,6 +14,9 @@ import Login from "./components/Pages/Login.jsx";
 import Register from "./components/Pages/Register.jsx";
 import Protected from './Auth/Protected.jsx';
 import Logout from './Auth/Logout.jsx';
+import Members from './components/Pages/Members/Index.jsx';
+import MemberCreate from './components/Pages/Members/Create.jsx';
+import MemberEdit from './components/Pages/Members/Edit.jsx';
 
 
 
@@ -42,6 +45,11 @@ function App() {
                             <Route index element={<Categories />} />
                             <Route path="create" element={<CategoryCreate />} />
                             <Route path="edit/:id" element={<CategoryEdit />} />
+                        </Route>
+                        <Route path="members">
+                            <Route index element={<Members />} />
+                            <Route path="create" element={<MemberCreate />} />
+                            <Route path="edit/:id" element={<MemberEdit />} />
                         </Route>
 
                     </Routes>
