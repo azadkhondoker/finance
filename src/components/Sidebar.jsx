@@ -25,6 +25,15 @@ import { Link, useLocation  } from "react-router";
                             <li className={isActive("/Members")}>
                                 <Link to="/Members" aria-expanded="false"><i className="ti-pie-chart"></i><span>Member</span></Link>
                             </li>
+                            <li className={isActive("/savings")}>
+                                <Link to="/savings" aria-expanded="false"><i className="ti-wallet"></i><span>Savings</span></Link>
+                            </li>
+                            <li className={isActive("/expenses")}>
+                                <Link to="/expenses" aria-expanded="false"><i className="ti-credit-card"></i><span>Expenses</span></Link>
+                            </li>
+                            <li className={isActive("/overview")}>
+                                <Link to="/overview" aria-expanded="false"><i className="ti-bar-chart"></i><span>Total Overview</span></Link>
+                            </li>
                             <li >
                                 <Link to="#" aria-expanded="false"><i className="ti-palette"></i><span>UI Features</span></Link>
                             </li>

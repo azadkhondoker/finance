@@ -17,8 +17,14 @@ import Logout from './Auth/Logout.jsx';
 import Members from './components/Pages/Members/Index.jsx';
 import MemberCreate from './components/Pages/Members/Create.jsx';
 import MemberEdit from './components/Pages/Members/Edit.jsx';
-
-
+import Savings from './components/Pages/Savings/Index.jsx';
+import SavingCreate from './components/Pages/Savings/Create.jsx';
+import SavingEdit from './components/Pages/Savings/Edit.jsx';
+import SavingMember from './components/Pages/Savings/Member.jsx';
+import Expenses from './components/Pages/Expenses/Index.jsx';
+import ExpenseCreate from './components/Pages/Expenses/Create.jsx';
+import ExpenseEdit from './components/Pages/Expenses/Edit.jsx';
+import Overview from './components/Pages/Overview/Index.jsx';
 
 function App() {
     const [ isSignedIn, setIsSignedIn ] = useState(()=> {
@@ -46,11 +52,26 @@ function App() {
                             <Route path="create" element={<CategoryCreate />} />
                             <Route path="edit/:id" element={<CategoryEdit />} />
                         </Route>
+
                         <Route path="members">
                             <Route index element={<Members />} />
                             <Route path="create" element={<MemberCreate />} />
                             <Route path="edit/:id" element={<MemberEdit />} />
                         </Route>
+
+                        <Route path="savings">
+                            <Route index element={<Savings />} />
+                            <Route path="create" element={<SavingCreate />} />
+                            <Route path="edit/:id" element={<SavingEdit />} />
+                            <Route path="member/:id" element={<SavingMember />} />
+                        </Route>
+
+                        <Route path="expenses">
+                            <Route index element={<Expenses />} />
+                            <Route path="create" element={<ExpenseCreate />} />
+                            <Route path="edit/:id" element={<ExpenseEdit />} />
+                        </Route>
+                        <Route path="overview" element={<Overview />} />
 
                     </Routes>
         </BrowserRouter> 
