@@ -21,10 +21,14 @@ import Savings from './components/Pages/Savings/Index.jsx';
 import SavingCreate from './components/Pages/Savings/Create.jsx';
 import SavingEdit from './components/Pages/Savings/Edit.jsx';
 import SavingMember from './components/Pages/Savings/Member.jsx';
+import Receipts from './components/Pages/Receipts/Index.jsx';
+import ReceiptMember from './components/Pages/Receipts/Member.jsx';
+import SavingReceipt from './components/Pages/Savings/Receipt.jsx';
 import Expenses from './components/Pages/Expenses/Index.jsx';
 import ExpenseCreate from './components/Pages/Expenses/Create.jsx';
 import ExpenseEdit from './components/Pages/Expenses/Edit.jsx';
 import Overview from './components/Pages/Overview/Index.jsx';
+
 
 function App() {
     const [ isSignedIn, setIsSignedIn ] = useState(()=> {
@@ -64,6 +68,12 @@ function App() {
                             <Route path="create" element={<SavingCreate />} />
                             <Route path="edit/:id" element={<SavingEdit />} />
                             <Route path="member/:id" element={<SavingMember />} />
+                            <Route path="receipt/:id" element={<SavingReceipt />} />
+                        </Route>
+
+                        <Route path="receipts">
+                            <Route index element={<Receipts />} />
+                            <Route path="member/:id" element={<ReceiptMember />} />
                         </Route>
 
                         <Route path="expenses">

@@ -30,7 +30,7 @@ function SavingCreate() {
       setMessage(response.data.message);
       return;
     }
-    window.location.href = '/savings';
+    window.location.href = '/savings/receipt/' + response.data.data;
   }
 
   return (

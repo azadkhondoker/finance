@@ -141,6 +141,9 @@ function SavingMember() {
 
                             <div className="form-button-action">
 
+                              <Link to={`/savings/receipt/${item.id}`} className="btn btn-link btn-success" title="Receipt">
+                                <i className="fa fa-receipt"></i>
+                              </Link>
                               <Link to={`/savings/edit/${item.id}`} className="btn btn-link btn-primary" title="Edit">
                                 <i className="fa fa-edit"></i>
                               </Link>

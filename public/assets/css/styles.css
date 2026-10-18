@@ -663,7 +663,6 @@ ul.breadcrumbs {
 }
 
 .breadcrumbs li a:before {
-    content: '/';
     color: #768387;
     position: absolute;
     right: -13px;
@@ -3023,4 +3022,22 @@ table.dataTable thead td {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+
+/* my row hand css */
+
+
+/* overview page */
+.viewCards {
+    padding-bottom: 100px;
+}
+
+.card.card-round {
+    height: 100%;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
 }

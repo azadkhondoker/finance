@@ -10,7 +10,7 @@ import { Link, useLocation  } from "react-router";
   return(
 
     <div className="sidebar-menu" aria-hidden="false">
-            <div className="sidebar-header">
+            <div className="sidebar-header">Members
                 <div className="logo">
                     <Link to="index.html"><picture><source srcSet="/assets/images/icon/logo.avif" type="image/avif"/><img srcSet="/assets/images/icon/logo.png" alt="logo"/></picture></Link>
                 </div>
@@ -23,10 +23,13 @@ import { Link, useLocation  } from "react-router";
                                 <Link to="/" aria-expanded="false"><i className="ti-dashboard"></i><span>dashboard</span></Link>
                             </li>
                             <li className={isActive("/Members")}>
-                                <Link to="/Members" aria-expanded="false"><i className="ti-pie-chart"></i><span>Member</span></Link>
+                                <Link to="/Members" aria-expanded="false"><i class="ti-user"></i><span>Member</span></Link>
                             </li>
                             <li className={isActive("/savings")}>
                                 <Link to="/savings" aria-expanded="false"><i className="ti-wallet"></i><span>Savings</span></Link>
+                            </li>
+                            <li className={isActive("/receipts")}>
+                                <Link to="/receipts" aria-expanded="false"><i className="fa-solid fa-file-invoice-dollar"></i><span>Receipts</span></Link>
                             </li>
                             <li className={isActive("/expenses")}>
                                 <Link to="/expenses" aria-expanded="false"><i className="ti-credit-card"></i><span>Expenses</span></Link>
