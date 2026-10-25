@@ -28,6 +28,15 @@ import Expenses from './components/Pages/Expenses/Index.jsx';
 import ExpenseCreate from './components/Pages/Expenses/Create.jsx';
 import ExpenseEdit from './components/Pages/Expenses/Edit.jsx';
 import Overview from './components/Pages/Overview/Index.jsx';
+import Investments from './components/Pages/Investments/Index.jsx';
+import Loans from './components/Pages/Loans/Index.jsx';
+import LoanCreate from './components/Pages/Loans/Create.jsx';
+import LoanEdit from './components/Pages/Loans/Edit.jsx';
+import LoanShow from './components/Pages/Loans/Show.jsx';
+import Assets from './components/Pages/Assets/Index.jsx';
+import AssetCreate from './components/Pages/Assets/Create.jsx';
+import AssetEdit from './components/Pages/Assets/Edit.jsx';
+import AssetSell from './components/Pages/Assets/Sell.jsx';
 
 
 function App() {
@@ -82,6 +91,19 @@ function App() {
                             <Route path="edit/:id" element={<ExpenseEdit />} />
                         </Route>
                         <Route path="overview" element={<Overview />} />
+                        <Route path="investments" element={<Investments />} />
+                        <Route path="loans">
+                            <Route index element={<Loans />} />
+                            <Route path="create" element={<LoanCreate />} />
+                            <Route path="edit/:id" element={<LoanEdit />} />
+                            <Route path=":id" element={<LoanShow />} />
+                        </Route>
+                        <Route path="assets">
+                            <Route index element={<Assets />} />
+                            <Route path="create" element={<AssetCreate />} />
+                            <Route path="edit/:id" element={<AssetEdit />} />
+                            <Route path="sell/:id" element={<AssetSell />} />
+                        </Route>
 
                     </Routes>
         </BrowserRouter> 

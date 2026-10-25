@@ -9,7 +9,7 @@ import { Link, useLocation  } from "react-router";
 
   return(
 
-    <div className={`sidebar-menu ${isSidebarOpen ? "sidebar-open" : "sidebar-closed"}`} aria-hidden={!isSidebarOpen}>
+    <div className="sidebar-menu" aria-hidden="false">
             <div className="sidebar-header">
                 <div className="logo">
                     <Link to="index.html"><picture><source srcSet="/assets/images/icon/logo.avif" type="image/avif"/><img srcSet="/assets/images/icon/logo.png" alt="logo"/></picture></Link>
@@ -27,6 +27,9 @@ import { Link, useLocation  } from "react-router";
                             </li>
                             <li className={isActive("/savings")}>
                                 <Link to="/savings" aria-expanded="false"><i className="ti-wallet"></i><span>Savings</span></Link>
+                            </li>
+                            <li className={isActive("/investments") || isActive("/loans") || isActive("/assets")}>
+                                <Link to="/investments" aria-expanded="false"><i className="fa-solid fa-chart-line"></i><span>Investments</span></Link>
                             </li>
                             <li className={isActive("/receipts")}>
                                 <Link to="/receipts" aria-expanded="false"><i className="fa-solid fa-file-invoice-dollar"></i><span>Receipts</span></Link>
