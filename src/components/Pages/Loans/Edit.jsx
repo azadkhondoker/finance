@@ -10,6 +10,7 @@ function LoanEdit() {
   let { id } = useParams();
 
   const [loan, setLoan] = React.useState(null);
+  const [flags, setFlags] = React.useState({});
   const [message, setMessage] = React.useState('');
 
   React.useEffect(() => {
@@ -17,6 +18,7 @@ function LoanEdit() {
       try {
         const response = await axios.get('loan/single.php?id=' + id);
         setLoan(response.data.data[0] || {});
+        setFlags({ has_schedule: response.data.has_schedule, schedule_locked: response.data.schedule_locked });
       } catch (error) {
         console.error('Error fetching loan:', error);
       }
@@ -48,7 +50,7 @@ function LoanEdit() {
             <div className="col-md-12">
               <div className="card card-round">
                 <div className="card-body">
-                  {loan && <LoanForm initial={loan} submitLabel="Update Loan" onSubmit={handleSubmit} message={message} />}
+                  {loan && <LoanForm initial={loan} flags={flags} submitLabel="Update Loan" onSubmit={handleSubmit} message={message} />}
                 </div>
               </div>
             </div>
