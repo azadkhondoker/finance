@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router';
 import Layout from '../Layout.jsx';
@@ -16,7 +17,7 @@ function MemberCreate() {
         url = 'member/update.php?id=' + id;
     }else{
         url = 'member/create.php';
-    }
+    } 
     let response = await axios.post(url, formData);
     window.location.href = '/members';
   }

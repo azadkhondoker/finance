@@ -1,5 +1,5 @@
 import { Link, useLocation  } from "react-router";
- function Sidebar() {
+ function Sidebar({isSidebarOpen}) {
 
    const location = useLocation();
 
@@ -23,7 +23,7 @@ import { Link, useLocation  } from "react-router";
                                 <Link to="/" aria-expanded="false"><i className="ti-dashboard"></i><span>dashboard</span></Link>
                             </li>
                             <li className={isActive("/Members")}>
-                                <Link to="/Members" aria-expanded="false"><i class="ti-user"></i><span>Member</span></Link>
+                                <Link to="/Members" aria-expanded="false"><i className="ti-user"></i><span>Member</span></Link>
                             </li>
                             <li className={isActive("/savings")}>
                                 <Link to="/savings" aria-expanded="false"><i className="ti-wallet"></i><span>Savings</span></Link>

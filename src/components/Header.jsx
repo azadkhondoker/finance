@@ -1,11 +1,11 @@
 
 
-function Header() {
+function Header({ toggleSidebar }) {
   return (
     <div className="header-area">
       <div className="row align-items-center">
         <div className="col-md-6 col-sm-8 clearfix">
-          <div className="nav-btn float-start">
+          <div className="nav-btn float-start" onClick={toggleSidebar} role="button" tabIndex={0}>
             <span></span>
             <span></span>
             <span></span>
