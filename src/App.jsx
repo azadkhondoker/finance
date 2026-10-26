@@ -33,6 +33,7 @@ import Loans from './components/Pages/Loans/Index.jsx';
 import LoanCreate from './components/Pages/Loans/Create.jsx';
 import LoanEdit from './components/Pages/Loans/Edit.jsx';
 import LoanShow from './components/Pages/Loans/Show.jsx';
+import LoanSlip from './components/Pages/Loans/Slip.jsx';
 import Assets from './components/Pages/Assets/Index.jsx';
 import AssetCreate from './components/Pages/Assets/Create.jsx';
 import AssetEdit from './components/Pages/Assets/Edit.jsx';
@@ -96,6 +97,7 @@ function App() {
                             <Route index element={<Loans />} />
                             <Route path="create" element={<LoanCreate />} />
                             <Route path="edit/:id" element={<LoanEdit />} />
+                            <Route path="slip/:id" element={<LoanSlip />} />
                             <Route path=":id" element={<LoanShow />} />
                         </Route>
                         <Route path="assets">

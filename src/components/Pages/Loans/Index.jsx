@@ -117,7 +117,7 @@ function Loans() {
                         <th>#</th>
                         <th>Borrower</th>
                         <th>Loan Date</th>
-                        <th>Due Date</th>
+                        <th>Loan Ends</th>
                         <th className="text-end">Loan</th>
                         <th className="text-end">Repaid</th>
                         <th className="text-end">Outstanding</th>
@@ -156,6 +156,9 @@ function Loans() {
                             <span className={'badge ' + (loan.status === 'closed' ? 'bg-success' : 'bg-warning')}>
                               {loan.status === 'closed' ? 'Closed' : 'Active'}
                             </span>
+                            {loan.overdue_count > 0 && (
+                              <><br /><span className="badge bg-danger mt-1">{loan.overdue_count} Out of Time</span></>
+                            )}
                           </td>
 
                           <td>
